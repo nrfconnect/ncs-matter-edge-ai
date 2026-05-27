@@ -1,0 +1,101 @@
+#
+# Copyright (c) 2026 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Matter Edge AI Samples Common"
+
+menuconfig MATTER_EDGEAI_DMIC
+	bool "Matter Edge AI DMIC"
+    select AUDIO
+    select AUDIO_DMIC
+    select GPIO
+	help
+	  Enable the Matter Edge AI DMIC module.
+
+if MATTER_EDGEAI_DMIC
+
+config MATTER_EDGEAI_DMIC_MEM_SLAB_NUM_BLOCKS
+	int "DMIC PCM memory slab block count"
+	range 4 32
+	default 32
+	help
+	  Number of RX blocks for the Zephyr DMIC driver mem slab (matter_common dmic).
+	  Fewer blocks reduce RAM when the reader keeps up with capture; increase if you
+	  see audio underruns when inference occasionally stalls.
+
+endif # MATTER_EDGEAI_DMIC
+
+menuconfig MATTER_EDGEAI_DIMMING
+	bool "Matter Edge AI Dimming"
+    select PWM
+	help
+	  Enable the Matter Edge AI Dimming module.
+
+if MATTER_EDGEAI_DIMMING
+
+config MATTER_EDGEAI_DIMMING_FX_TICK_MS
+	int "PWM dimming effect tick period (milliseconds)"
+	range 10 50
+	default 25
+	help
+	  Interval for the dimming work handler. Larger values reduce scheduling overhead
+	  at the cost of slightly coarser LED PWM steps.
+
+endif # MATTER_EDGEAI_DIMMING
+
+config WAKEWORD_PROBABILITY_THRESHOLD
+	int "Wakeword probability threshold"
+	range 0 1000
+	default 990
+	help
+	   Probability threshold for wakeword detection model. The value is expressed in units of
+	   1/1000.
+
+config WAKEWORD_HISTORY_SIZE
+	int "Size of wakeword predictions history"
+	range 1 32
+	default 20
+	help
+	  Size of history of previous results from wakeword detection model. Each entry corresponds
+	  to 30 milliseconds of past audio.
+
+config WAKEWORD_COUNT_THRESHOLD
+	int "Threshold for wakeword detection from predictions history"
+	range 1 WAKEWORD_HISTORY_SIZE
+	default 15
+	help
+	  Number of predictions above threshold in predictions history required to confirm wakeword
+	  detection.
+
+config KEYWORD_DETECTION_TIMEOUT_S
+	int "Timeout for keyword detection in seconds"
+	range 1 60
+	default 5
+	help
+	  Timeout for keyword detection in seconds after recognizing the wakeword.
+
+if MATTER_EDGEAI
+
+config EDGEAI_TASK_THREAD_STACK_SIZE
+	int "Edge AI task thread stack size"
+	default 6144
+	help
+	  Stack size for the Edge AI wakeword/keyword task thread.
+
+config EDGEAI_TASK_THREAD_PRIORITY
+	int "Edge AI task thread priority"
+	default 8
+	help
+	  Preemptible priority of the Edge AI wakeword/keyword task thread.
+
+config MATTER_EDGEAI_WW_KW_LOG_LEVEL
+	int "Edge AI wakeword/keyword log level"
+	default 3
+	help
+	  Log level for the Edge AI wakeword/keyword task and model processing modules.
+
+endif # MATTER_EDGEAI
+
+endmenu

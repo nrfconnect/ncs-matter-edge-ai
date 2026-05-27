@@ -1,89 +1,125 @@
-# SPDX-License-Identifier: Apache-2.0
-#
-# Note: The list of ForEachMacros can be obtained using:
-#
-#    git grep -h '^#define [^[:space:]]*FOR_EACH[^[:space:]]*(' include/ \
-#    | sed "s,^#define \([^[:space:]]*FOR_EACH[^[:space:]]*\)(.*$,  - '\1'," \
-#    | sort | uniq
-#
-# References:
-#   - https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-
 ---
-BasedOnStyle: LLVM
-AlignConsecutiveMacros: AcrossComments
-AllowShortBlocksOnASingleLine: Never
+Language:        Cpp
+# BasedOnStyle:  WebKit
+AccessModifierOffset: -4
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: false
+AlignEscapedNewlines: Right
+AlignOperands:   false
+AlignTrailingComments: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: false
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortEnumsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: None
+AllowShortFunctionsOnASingleLine: Inline
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
-AttributeMacros:
-  - __aligned
-  - __deprecated
-  - __packed
-  - __printf_like
-  - __syscall
-  - __subsystem
-BitFieldColonSpacing: After
-BreakBeforeBraces: Linux
-ColumnLimit: 100
-ConstructorInitializerIndentWidth: 8
-ContinuationIndentWidth: 8
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: true
+BinPackArguments: true
+BinPackParameters: true
+BraceWrapping:
+  AfterClass:      true
+  AfterControlStatement: true
+  AfterEnum:       true
+  AfterFunction:   true
+  AfterNamespace:  false
+  AfterObjCDeclaration: true
+  AfterStruct:     true
+  AfterUnion:      true
+  BeforeCatch:     false
+  BeforeElse:      true
+  IndentBraces:    false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakBeforeBinaryOperators: None
+BreakBeforeBraces: Custom
+BreakBeforeInheritanceComma: false
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializersBeforeComma: false
+BreakConstructorInitializers: AfterColon
+BreakAfterJavaFieldAnnotations: false
+BreakStringLiterals: true
+ColumnLimit:     132
+CommentPragmas:  '^ IWYU pragma:'
+CompactNamespaces: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: false
+DerivePointerAlignment: false
+DisableFormat:   false
+ExperimentalAutoDetectBinPacking: false
+FixNamespaceComments: true
 ForEachMacros:
-  - 'FOR_EACH'
-  - 'FOR_EACH_FIXED_ARG'
-  - 'FOR_EACH_IDX'
-  - 'FOR_EACH_IDX_FIXED_ARG'
-  - 'FOR_EACH_NONEMPTY_TERM'
-  - 'RB_FOR_EACH'
-  - 'RB_FOR_EACH_CONTAINER'
-  - 'SYS_DLIST_FOR_EACH_CONTAINER'
-  - 'SYS_DLIST_FOR_EACH_CONTAINER_SAFE'
-  - 'SYS_DLIST_FOR_EACH_NODE'
-  - 'SYS_DLIST_FOR_EACH_NODE_SAFE'
-  - 'SYS_SFLIST_FOR_EACH_CONTAINER'
-  - 'SYS_SFLIST_FOR_EACH_CONTAINER_SAFE'
-  - 'SYS_SFLIST_FOR_EACH_NODE'
-  - 'SYS_SFLIST_FOR_EACH_NODE_SAFE'
-  - 'SYS_SLIST_FOR_EACH_CONTAINER'
-  - 'SYS_SLIST_FOR_EACH_CONTAINER_SAFE'
-  - 'SYS_SLIST_FOR_EACH_NODE'
-  - 'SYS_SLIST_FOR_EACH_NODE_SAFE'
-  - '_WAIT_Q_FOR_EACH'
-  - 'Z_FOR_EACH'
-  - 'Z_FOR_EACH_ENGINE'
-  - 'Z_FOR_EACH_EXEC'
-  - 'Z_FOR_EACH_FIXED_ARG'
-  - 'Z_FOR_EACH_FIXED_ARG_EXEC'
-  - 'Z_FOR_EACH_IDX'
-  - 'Z_FOR_EACH_IDX_EXEC'
-  - 'Z_FOR_EACH_IDX_FIXED_ARG'
-  - 'Z_FOR_EACH_IDX_FIXED_ARG_EXEC'
-  - 'Z_GENLIST_FOR_EACH_CONTAINER'
-  - 'Z_GENLIST_FOR_EACH_CONTAINER_SAFE'
-  - 'Z_GENLIST_FOR_EACH_NODE'
-  - 'Z_GENLIST_FOR_EACH_NODE_SAFE'
-IfMacros:
-  - 'CHECKIF'
-# Disabled for now, see bug https://github.com/zephyrproject-rtos/zephyr/issues/48520
-#IncludeBlocks: Regroup
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
 IncludeCategories:
-  - Regex: '^".*\.h"$'
-    Priority: 0
-  - Regex: '^<(assert|complex|ctype|errno|fenv|float|inttypes|limits|locale|math|setjmp|signal|stdarg|stdbool|stddef|stdint|stdio|stdlib|string|tgmath|time|wchar|wctype)\.h>$'
-    Priority: 1
-  - Regex: '^\<zephyr/.*\.h\>$'
-    Priority: 2
-  - Regex: '.*'
-    Priority: 3
+  - Regex:           '^<Weave/Core.*'
+    Priority:        0
+  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
+    Priority:        2
+  - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
+    Priority:        3
+  - Regex:           '.*'
+    Priority:        1
+IncludeIsMainRegex: '(Test)?$'
 IndentCaseLabels: false
-IndentGotoLabels: false
-IndentWidth: 8
-InsertBraces: true
-SpaceBeforeParens: ControlStatementsExceptControlMacros
-SortIncludes: Never
-UseTab: Always
-WhitespaceSensitiveMacros:
-  - STRINGIFY
-  - Z_STRINGIFY
+IndentWidth:     4
+IndentWrappedFunctionNames: false
+JavaScriptQuotes: Leave
+JavaScriptWrapImports: true
+KeepEmptyLinesAtTheStartOfBlocks: true
+MacroBlockBegin: ''
+MacroBlockEnd:   ''
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: None
+ObjCBlockIndentWidth: 4
+ObjCSpaceAfterProperty: true
+ObjCSpaceBeforeProtocolList: true
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 19
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 60
+PointerAlignment: Middle
+ReflowComments:  true
+SortIncludes:    true
+SortUsingDeclarations: true
+SpaceAfterCStyleCast: true
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles:  false
+SpacesInContainerLiterals: true
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+Standard:        Cpp11
+TabWidth:        8
+UseTab:          Never
+InsertNewlineAtEOF: true
+---
+Language: ObjC
+BasedOnStyle: WebKit
+Standard: c++17
+PointerAlignment: Middle
+SpaceAfterCStyleCast: true
+SpaceInEmptyBlock: false
+ObjCBreakBeforeNestedBlockParam: false
+---
+Language: JavaScript
+BasedOnStyle: WebKit
+AlignConsecutiveAssignments: true
+AllowShortFunctionsOnASingleLine: None
+IndentWidth:     2
+ColumnLimit:     132
+...
