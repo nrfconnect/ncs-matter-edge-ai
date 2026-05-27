@@ -1,0 +1,26 @@
+sample:
+  description: Matter Generic Switch application
+  name: Matter Generic Switch
+
+common:
+  sysbuild: true
+  build_only: true
+  tags:
+    - ci_build
+    - sysbuild
+
+tests:
+  sample.matter.generic_switch.debug.dmic_adafruit:
+    extra_args: 
+      - EXTRA_DTC_OVERLAY_FILE=boards/dmic_adafruit.dtsi
+    platform_allow:
+      - nrf54lm20dk/nrf54lm20b/cpuapp
+    integration_platforms:
+      - nrf54lm20dk/nrf54lm20b/cpuapp
+  sample.matter.generic_switch.debug.dmic_low_power:
+    extra_args:
+      - EXTRA_DTC_OVERLAY_FILE=boards/dmic_low_power.dtsi
+    platform_allow:
+      - nrf54lm20dk/nrf54lm20b/cpuapp
+    integration_platforms:
+      - nrf54lm20dk/nrf54lm20b/cpuapp

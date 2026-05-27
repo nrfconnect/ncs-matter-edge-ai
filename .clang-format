@@ -11,6 +11,8 @@
 
 ---
 BasedOnStyle: LLVM
+AccessModifierOffset: -8
+IndentAccessModifiers: false
 AlignConsecutiveMacros: AcrossComments
 AllowShortBlocksOnASingleLine: Never
 AllowShortCaseLabelsOnASingleLine: false
