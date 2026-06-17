@@ -1,0 +1,8 @@
+.. rst-class:: numbered-step
+
+Commission to Matter network
+----------------------------
+
+To commission the device to the Matter network complete the following steps:
+
+.. include:: /includes/testing/thread/commission.txt

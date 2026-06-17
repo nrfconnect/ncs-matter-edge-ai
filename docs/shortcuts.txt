@@ -5,3 +5,33 @@
 
 .. |NCS| replace:: nRF Connect SDK
 .. |addon| replace:: Matter Edge AI add-on
+
+.. ### Matter sources
+
+.. |matter_gn_required_note| replace:: Matter requires the GN tool.
+   If you are updating from the |NCS| version earlier than v1.5.0, see the `Manual installation gn`_.
+.. |matter_unique_discriminator_note| replace:: If you are working with multiple devices, set a unique discriminator for each one, or commission them one at a time.
+   See `Configuring device identification`_ for more information.
+
+.. Buttons
+.. |First Button| replace:: `First Button <#buttons-and-leds-map>`__
+.. |Second Button| replace:: `Second Button <#buttons-and-leds-map>`__
+.. |Third Button| replace:: `Third Button <#buttons-and-leds-map>`__
+.. |Fourth Button| replace:: `Fourth Button <#buttons-and-leds-map>`__
+
+.. |matter_factory_reset| replace:: To restore the device settings and state to its factory set press the |First Button| for six seconds to initiate the factory reset of the device.
+.. |matter_ble_advertising_auto| replace:: Before starting the commissioning procedure, make sure that the device is discoverable over Bluetooth LE.
+                                           The device becomes discoverable automatically upon the device startup, but only for a predefined period of time (one hour by default).
+                                           If the Bluetooth LE advertising times out, enable it again.
+.. |matter_cd_info_note_for_samples| replace:: This data payload also includes test Device Attestation, with test Certification Declaration, Product ID, and Vendor ID.
+   These are used for `Device Attestation within commissioning`_, and you can generate your own test Certification Declaration when you `work on Matter end product <Testing Device Attestation during development_>`_.
+
+.. ### sdk-nrf sources
+
+.. |sysbuild_autoenabled_ncs| replace:: When building `repository applications <Repository application_>`_ in the |addon| which is an `SDK repository <Repository types_>`_, building with sysbuild is `enabled by default <Sysbuild enabled by default_>`_.
+   If you work with out-of-tree `freestanding applications <Freestanding application_>`_, you need to manually pass the ``--sysbuild`` parameter to every build command or `configure west to always use it <Configuring sysbuild usage in west_>`_.
+.. |config| replace:: See `Configuring and building`_ in the |NCS| documentation for information about how to permanently or temporarily change the configuration.
+.. |connect_kit| replace:: Connect the kit to the computer using a USB cable.
+   The kit is assigned a COM port (Windows) or ttyACM device (Linux), which is visible in the Device Manager.
+.. |connect_terminal_ANSI| replace:: Connect to the kit with a terminal emulator (for example, nRF Connect Serial Terminal).
+   See `Testing and optimization`_ in the |NCS| documentation for the required settings and steps.
