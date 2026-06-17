@@ -1,7 +1,42 @@
 .. ### nRF Connect SDK documentation
 
-.. _`Developing with nRF54L Series`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/device_guides/nrf54l/index.html
+.. _`Developing with nRF54L Series`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/device_guides/nrf54l/index.html
+.. _`Repository application`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/create_application.html#repository_application
+.. _`Repository types`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/dev_model_and_contributions/code_base.html#repository_types
+.. _`Freestanding application`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/create_application.html#create-application-types-freestanding
+.. _`Configuring and building`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/config_and_build/index.html
+.. _`Sysbuild enabled by default`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/config_and_build/config_and_build_system.html#sysbuild_enabled_by_default
+.. _`Configuring sysbuild usage in west`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/config_and_build/sysbuild/sysbuild_configuring_west.html
+.. _`Testing and optimization`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/test_and_optimize.html
+.. _`Building an application`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/config_and_build/building.html
+.. _`Programming an application`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/programming.html
+.. _`chip-tool`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/matter/chip_tool_guide.html
+.. _`Matter nRF Connect releases`: https://github.com/nrfconnect/sdk-connectedhomeip/releases
+.. _`Thread tools`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/thread/tools.html
+.. _`Running OTBR using Docker`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/thread/tools.html#ug-thread-tools-tbr-docker
+.. _`Testing Matter in the NCS`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/getting_started/testing/index.html
+.. _`Matter controller`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/overview/network_topologies.html#ug-matter-configuring-controller
+.. _`Onboarding information formats`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/overview/commissioning.html#ug-matter-network-topologies-commissioning-onboarding-formats
 
 .. ### NCS Zephyr documentation set
 
-.. _`nrf54lm20dk`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf54lm20dk/doc/index.html
+.. _`nrf54lm20dk`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/zephyr/boards/nordic/nrf54lm20dk/doc/index.html
+
+.. ### Matter Edge-AI sources
+
+.. _`Software maturity levels`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/releases_and_maturity/software_maturity.html
+.. _`Nordic Edge AI Lab`: https://ai.lab.nordicsemi.com/
+.. _`Edge AI add-on`: https://github.com/nrfconnect/sdk-edge-ai
+.. _`adafruit PDM`: https://learn.adafruit.com/adafruit-pdm-microphone-breakout
+.. _`lowPower PDM`: https://github.com/hlord2000/Microphone-Fin
+
+.. ### Matter sdk-nrf sources
+
+.. _`Configuring device identification`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/getting_started/advanced_kconfigs.html#matter-device-identification
+.. _`Manual installation gn`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/getting_started/tools.html#gn-tool
+.. _`Configure application`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/app_dev/config_and_build/index.html
+.. _`Matter creating accessory`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/getting_started/adding_clusters.html
+.. _`Short Idle Time (SIT)`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/getting_started/low_power_configuration.html#short-idle-time-and-long-idle-time-devices
+.. _`Minimal Thread Device (MTD) in a Sleepy End Device (SED) variant`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/getting_started/low_power_configuration.html#short-idle-time-and-long-idle-time-devices
+.. _`Device Attestation within commissioning`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/end_product/attestation.html#ug-matter-device-attestation-commissioning-info
+.. _`Testing Device Attestation during development`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/protocols/matter/end_product/attestation.html#ug-matter-device-attestation-testing-da
