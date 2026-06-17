@@ -13,5 +13,6 @@ In combination with the |NCS|, the |addon| allows for development of Matter Edge
    :glob:
 
    matter_edge_ai/samples
+   matter_edge_ai/ww_kw_guide
    release-notes
    config
