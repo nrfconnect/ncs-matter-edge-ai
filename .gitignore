@@ -1,3 +1,4 @@
+# Files
 *.o
 *.d
 *.cmd
@@ -6,6 +7,18 @@
 *.swp
 *.swo
 *~
+
+# editors
+.vscode
+.devcontainer
+
+# python
+.venv
+__pycache__/
+
+# build
+/build*
+/samples/**/build*
 build
 build-*
 build_*
@@ -22,8 +35,6 @@ tags
 .cproject
 .xxproject
 .envrc
-.vscode
-.devcontainer
 compliance.xml
 sanity-out*
 twister-out*
@@ -31,6 +42,9 @@ map.yml
 hardware-map.yaml*
 coverage.info
 
+# docs
+/docs/_build*
+/docs/venv
 doc/_build
 doc/_src
 doc/*_warnings.txt

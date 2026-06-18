@@ -1,0 +1,7 @@
+.. ### nRF Connect SDK documentation
+
+.. _`Developing with nRF54L Series`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/device_guides/nrf54l/index.html
+
+.. ### NCS Zephyr documentation set
+
+.. _`nrf54lm20dk`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf54lm20dk/doc/index.html
