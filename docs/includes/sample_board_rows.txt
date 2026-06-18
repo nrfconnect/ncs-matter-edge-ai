@@ -1,0 +1,11 @@
+.. heading
+
+| Hardware platforms | PCA | Board name | Board target |
+
+.. nrf54lm20dk_nrf54lm20a_cpuapp
+
+| `Developing with nRF54L Series`_ | PCA10184 | `nrf54lm20dk`_ | ``nrf54lm20dk/nrf54lm20a/cpuapp`` |
+
+.. nrf54lm20dk_nrf54lm20b_cpuapp
+
+| `Developing with nRF54L Series`_ | PCA10184 | `nrf54lm20dk`_ | ``nrf54lm20dk/nrf54lm20b/cpuapp`` |
