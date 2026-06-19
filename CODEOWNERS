@@ -1,1 +1,3 @@
 * @nrfconnect/ncs-matter
+*.rst @annwoj
+*.txt @annwoj
