@@ -24,3 +24,19 @@ tests:
       - nrf54lm20dk/nrf54lm20b/cpuapp
     integration_platforms:
       - nrf54lm20dk/nrf54lm20b/cpuapp
+  sample.matter.generic_switch.debug.dmic_adafruit.release:
+    extra_args:
+      - EXTRA_DTC_OVERLAY_FILE=boards/dmic_adafruit.dtsi
+      - FILE_SUFFIX=release
+    platform_allow:
+      - nrf54lm20dk/nrf54lm20b/cpuapp
+    integration_platforms:
+      - nrf54lm20dk/nrf54lm20b/cpuapp
+  sample.matter.generic_switch.debug.dmic_low_power.release:
+    extra_args:
+      - EXTRA_DTC_OVERLAY_FILE=boards/dmic_low_power.dtsi
+      - FILE_SUFFIX=release
+    platform_allow:
+      - nrf54lm20dk/nrf54lm20b/cpuapp
+    integration_platforms:
+      - nrf54lm20dk/nrf54lm20b/cpuapp

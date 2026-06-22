@@ -13,6 +13,7 @@
 #include <zephyr/logging/log.h>
 
 #include "dmic.h"
+#include "zephyr/kernel.h"
 
 LOG_MODULE_REGISTER(kw, CONFIG_MATTER_EDGEAI_WW_KW_LOG_LEVEL);
 
