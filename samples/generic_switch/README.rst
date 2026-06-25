@@ -151,7 +151,7 @@ UART30
    * ``Waiting for wakeword...``
    * ``wakeword detected, Looking for keywords``
 
-   The UART baud rate is set to ``1000000``.
+   The UART baud rate is set to ``115200``.
 
 .. include:: /includes/interface/segger_usb.txt
 .. include:: /includes/interface/nfc.txt

@@ -77,12 +77,12 @@
 
 &uart30 {
 	status = "okay";
-	current-speed = <1000000>;
+	current-speed = <115200>;
 };
 
 &uart20 {
 	status = "okay";
-	current-speed = <1000000>;
+	current-speed = <115200>;
 };
 
 &axon {
