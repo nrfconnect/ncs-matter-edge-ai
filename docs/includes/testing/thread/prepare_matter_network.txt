@@ -1,0 +1,5 @@
+1. Configure the Thread Border Router.
+   See the `Running OTBR using Docker`_ section on the `Thread tools`_ page.
+
+#. Download the prebuilt CHIP tool package from the `Matter nRF Connect releases`_ GitHub page.
+   Make sure that the package is compatible with your |NCS| version.

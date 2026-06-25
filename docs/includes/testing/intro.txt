@@ -1,0 +1,2 @@
+This section shows how to test the |matter_type|.
+You can test it using your PC and the `CHIP Tool for Linux or macOS <Matter controller_>`_ or commercial ecosystem that supports Matter.

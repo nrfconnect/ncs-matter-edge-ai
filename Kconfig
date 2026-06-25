@@ -12,6 +12,7 @@ config MATTER_EDGEAI
     select NRF_EDGEAI
     depends on FPU
     depends on NEWLIB_LIBC
+    select EXPERIMENTAL
 	help
 	  Integration of Matter application with the nRF Edge AI library.
 
