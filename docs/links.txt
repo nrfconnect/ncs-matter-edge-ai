@@ -1,5 +1,8 @@
 .. ### nRF Connect SDK documentation
 
+.. _`nRF Connect SDK`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/index.html
+.. _`Installing the nRF Connect SDK`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/installation/install_ncs.html
+.. _`Kconfig search`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/kconfig/index.html
 .. _`Developing with nRF54L Series`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/device_guides/nrf54l/index.html
 .. _`Repository application`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/app_dev/create_application.html#repository_application
 .. _`Repository types`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/dev_model_and_contributions/code_base.html#repository_types
@@ -25,6 +28,7 @@
 .. ### Matter Edge-AI sources
 
 .. _`Software maturity levels`: https://docs.nordicsemi.com/bundle/ncs/|ncs_version|/page/nrf/releases_and_maturity/software_maturity.html
+.. _`Matter Edge AI add-on`: https://github.com/nrfconnect/ncs-matter-edge-ai
 .. _`Nordic Edge AI Lab`: https://ai.lab.nordicsemi.com/
 .. _`Edge AI add-on`: https://github.com/nrfconnect/sdk-edge-ai
 .. _`adafruit PDM`: https://learn.adafruit.com/adafruit-pdm-microphone-breakout
