@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
  */
 
+#include <nrf54lm20_cpuapp_internal_partitions.dtsi>
+
 / {
 	chosen {
 		ncs,control-output-uart = &uart30;

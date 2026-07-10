@@ -11,7 +11,7 @@ manifest:
     - name: sdk-edge-ai
       url: https://github.com/nrfconnect/sdk-edge-ai
       path: sdk-edge-ai
-      revision: v2.1.0
+      revision: v2.2.0
       import: true
 
   self:

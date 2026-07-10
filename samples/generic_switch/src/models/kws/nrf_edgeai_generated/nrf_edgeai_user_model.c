@@ -8,7 +8,7 @@
 //////////////////////////////////////////////////////////////////////////////
 /* Nordic EdgeAI Lab Solution ID and Runtime Version */
 #define EDGEAI_LAB_SOLUTION_ID_STR      "11323"
-#define EDGEAI_RUNTIME_VERSION_COMBINED 0x00000002
+#define EDGEAI_RUNTIME_VERSION_COMBINED 0x00000202
 
 //////////////////////////////////////////////////////////////////////////////
 #define INPUT_TYPE i16
@@ -220,8 +220,8 @@ static nrf_edgeai_t nrf_edgeai_ = {
     ///
     .p_dsp = P_DSP_PIPELINE,
     ///
-    .model.type                 = MODEL_TYPE,
-    .model.task                 = MODEL_TASK,
+    .model.type                 = (nrf_edgeai_model_type_t)MODEL_TYPE,
+    .model.task                 = (nrf_edgeai_model_task_t)MODEL_TASK,
     .model.instance.p_void      = P_MODEL_INSTANCE,
     .model.output.memory.p_void = model_outputs_,
     .model.output.num           = MODEL_OUTPUTS_NUM,

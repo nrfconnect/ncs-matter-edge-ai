@@ -13,9 +13,9 @@ config MATTER_EDGEAI_DETAILED_MODEL_LOGS
 
 menuconfig MATTER_EDGEAI_DMIC
 	bool "Matter Edge AI DMIC"
-    select AUDIO
-    select AUDIO_DMIC
-    select GPIO
+	select AUDIO
+	select AUDIO_DMIC
+	select GPIO
 	help
 	  Enable the Matter Edge AI DMIC module. DMIC provides an interface to the digital microphone.
 	  The audio is captured and processed by the Edge AI model.
@@ -42,7 +42,7 @@ endif # MATTER_EDGEAI_DMIC
 
 menuconfig MATTER_EDGEAI_DIMMING
 	bool "Matter Edge AI Dimming"
-    select PWM
+	select PWM
 	help
 	  Enable the Matter Edge AI Dimming module. Dimming provides an interface to the LED PWM.
 	  The LED PWM is used to dim the LED light when the wakeword is detected.
