@@ -9,7 +9,10 @@ extern "C" {
 
 #define NRF_AXON_MODEL_STREAM_STATE_INTERNAL_INT8_30_MAX_IL_BUFFER_USED 6656
 #define NRF_AXON_MODEL_STREAM_STATE_INTERNAL_INT8_30_MAX_PSUM_BUFFER_USED 0
-static_assert(NRF_AXON_MODEL_STREAM_STATE_INTERNAL_INT8_30_MAX_IL_BUFFER_USED < (NRF_AXON_INTERLAYER_BUFFER_SIZE), "nrf_axon_interlayer_buffer TOO SMALL!!!!\n");
+
+#if AXON_COMPILE_TIME_BUFFER_CHECK
+static_assert(NRF_AXON_MODEL_STREAM_STATE_INTERNAL_INT8_30_MAX_IL_BUFFER_USED < sizeof(nrf_axon_interlayer_buffer), "nrf_axon_interlayer_buffer TOO SMALL!!!!\n");
+#endif
 static_assert(NRF_AXON_VERSION >= 0x00010200, "MODEL REQUIRES FEATURES NOT SUPPORTED BY THIS DRIVER VERSION!!! UPGRADE THE AXON DRIVER!!!");
 // size of axon_model_const_stream_state_internal_int8_30: 295680
 const static struct {
