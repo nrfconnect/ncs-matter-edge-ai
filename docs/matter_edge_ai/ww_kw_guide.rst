@@ -19,7 +19,7 @@ The WW/KW pipeline runs as a dedicated Zephyr thread (:cpp:class:`EdgeAITask`) t
 
 1. Captures PCM audio from the DMIC.
 2. Runs wakeword inference until a wakeword is detected.
-3. Opens a keyword detection window (duration set by :kconfig:option:`CONFIG_KEYWORD_DETECTION_TIMEOUT_S`).
+3. Opens a keyword detection window (duration set by :kconfig:option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S`).
 4. Runs keyword spotting inference and dispatches recognized commands to the application.
 
 Generic inference, state machine, and DMIC handling live in :file:`samples/common`.
@@ -55,7 +55,7 @@ Models
 ******
 
 Each application which uses WW/KW ships two models exported from `Nordic Edge AI Lab`_.
-The models includes the followig files:
+The models include the following files:
 
 * :file:`nrf_edgeai_user_model.h`
 * :file:`nrf_edgeai_user_model.c`

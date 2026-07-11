@@ -22,15 +22,11 @@ It captures audio from a PDM microphone, detects a wakeword, recognizes keywords
 
 .. note::
    This sample in the |addon| for the |NCS| is provided as an experimental feature.
-   See `Software maturity levels`_ in the |NCS| documentation for what experimental support means.
+   See `Software maturity levels`_ in the |NCS| documentation for details.
 
-   The solution may not be power-optimized yet.
-
+   Currently, the solution may not be power-optimized.
    Wakeword and keyword recognition are also experimental.
-   For reliable testing, play synthetic audio recordings near the microphone instead of speaking live.
-   Example recordings for the supported wakeword and keywords are available in the :file:`sounds` directory.
-
-.. include:: /includes/sleep_thread_sed_sit.txt
+   For reliable testing, use the synthetic audio recordings described in the :ref:`Synthetic test audio <generic_switch_synthetic_test_audio>` section.
 
 Requirements
 ************
@@ -41,10 +37,9 @@ The sample supports the following development kit:
 
 .. include:: /includes/thread.txt
 
-Programming requirements
-========================
+Hardware setup
+==============
 
-To commission the device and control remote lights over a Matter network, you need a Matter controller `configured on PC or smartphone <Testing Matter in the NCS_>`_.
 The application requires a PDM digital microphone connected according to the selected devicetree overlay.
 
 For development, two microphone options are supported, each with a dedicated :file:`.dtsi` overlay in the project:
@@ -53,7 +48,7 @@ For development, two microphone options are supported, each with a dedicated :fi
 * `lowPower PDM`_ — Low-power PDM MEMS microphone module that can be attached to the nRF54LM20 DK
 
 Pin mapping
-===========
+-----------
 
 The application supports the `Adafruit PDM`_ module.
 It can be powered from the 1.8 V ``VDD:IO`` supply.
@@ -78,10 +73,12 @@ The following table shows how to connect this module to the DK:
 The ``SEL`` pin selects the audio channel.
 Connecting ``SEL`` to ground selects the left channel.
 
-To use other microphones, adapt the PDM configuration parameters in :file:`src/dmic.c` and add the corresponding :file:`.dtsi` overlay file to the project.
+To use other microphones, adapt the PDM configuration parameters in :file:`samples/common/dmic.c` and add the corresponding :file:`.dtsi` overlay file to the project.
 
 Overview
 ********
+
+.. include:: /includes/sleep_thread_sed_sit.txt
 
 The application runs a two-stage inference pipeline:
 
@@ -113,13 +110,14 @@ Each action can be assigned to a single steering function in the ecosystem app.
 To support toggling a light from one voice command, the sample maps short press to *on* and long press to *off* on Endpoint 1.
 The ``TOGGLE_LIGHT`` keyword alternates between those two actions.
 
-The sample exposes five momentary switch endpoints:
+The sample exposes five momentary switch endpoints.
+Endpoint *N* (where *N* > 1) maps to Scene *N* − 1 in the ecosystem:
 
-* **Endpoint 1** — Short and long press actions for toggle on/off control.
-* **Endpoint 2** — Short press action assignable to Scene 1.
-* **Endpoint 3** — Short press action assignable to Scene 2.
-* **Endpoint 4** — Short press action assignable to Scene 3.
-* **Endpoint 5** — Short press action assignable to Scene 4.
+* Endpoint 1 — Short and long press actions for toggle on/off control.
+* Endpoint 2 — Short press action assignable to Scene 1.
+* Endpoint 3 — Short press action assignable to Scene 2.
+* Endpoint 4 — Short press action assignable to Scene 3.
+* Endpoint 5 — Short press action assignable to Scene 4.
 
 For details on the wakeword and keyword spotting integration, see :ref:`matter_edge_ai_ww_kw_guide`.
 
@@ -138,13 +136,13 @@ First LED:
 First Button:
    .. include:: /includes/interface/main_button.txt
 
-All LEDs
+All LEDs:
    When PWM support is available, the application uses a dimming effect to indicate the active keyword detection window after wakeword detection.
 
 Second Button:
    Pressing this button toggles the bound light using the same short/long press mapping as the ``TOGGLE_LIGHT`` keyword.
 
-UART30
+UART30:
    Prints runtime messages for state transitions and command execution.
    Typical messages include:
 
@@ -165,6 +163,8 @@ The following microphone overlays are provided:
 
 * :file:`boards/dmic_adafruit.dtsi` for the `Adafruit PDM`_ module.
 * :file:`boards/dmic_low_power.dtsi` for the `lowPower PDM`_ module.
+
+You can adjust the keyword detection window duration with the :kconfig:option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S` Kconfig option.
 
 Building and running
 ********************
@@ -189,6 +189,8 @@ Testing
 *******
 
 .. include:: /includes/testing/intro.txt
+
+.. _generic_switch_synthetic_test_audio:
 
 Synthetic test audio
 ====================
@@ -229,15 +231,19 @@ Testing with CHIP Tool
 Play the synthetic wakeword command
 -----------------------------------
 
-Verify that the LEDs on the DK start blinking smoothly.
+Play a synthetic wakeword recording from the :file:`sounds` directory near the PDM microphone.
+Verify that the LEDs on the DK start blinking smoothly and that the UART log shows ``wakeword detected, Looking for keywords``.
 
 .. rst-class:: numbered-step
 
 Play the synthetic keyword command
 ----------------------------------
 
-Play one of the synthetic keyword commands.
-Verify that the command is executed in the terminal logs and on the bound light device.
+Play one of the synthetic keyword recordings.
+Verify that the command is executed in the terminal logs.
+
+For ``TOGGLE_LIGHT``, bind Endpoint 1 to a light in your Matter ecosystem or observe the corresponding Generic Switch action in CHIP Tool.
+You can also press the |Second Button| to trigger the same toggle behavior without using voice commands.
 
 Testing with a commercial ecosystem
 ===================================

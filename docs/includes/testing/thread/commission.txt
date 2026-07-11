@@ -27,7 +27,7 @@
       080000000000000000000300001735060004001fffe00208deadbeefcafe12340708fd123456789abc00000510112233445566778899aabbccddeeff00030a54657374576f726b3031010211220410aabbccddeeff00112233445566778899aa0c0402a0f7f8
       Done
 
-#. Run the following command and fill the *<thread dataset>* argument obtain in the previous step:
+#. Run the following command and fill the *<thread dataset>* argument obtained:
 
    .. parsed-literal::
       :class: highlight
