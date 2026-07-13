@@ -126,20 +126,16 @@ User interface
 
 .. include:: /includes/interface/intro.txt
 
-.. include:: /includes/interface/interface.txt
-
-.. include:: /includes/interface/interface_table.txt
-
-First LED:
+LED 0:
    .. include:: /includes/interface/state_led.txt
 
-First Button:
+Button 0:
    .. include:: /includes/interface/main_button.txt
 
 All LEDs:
    When PWM support is available, the application uses a dimming effect to indicate the active keyword detection window after wakeword detection.
 
-Second Button:
+Button 1:
    Pressing this button toggles the bound light using the same short/long press mapping as the ``TOGGLE_LIGHT`` keyword.
 
 UART30:
@@ -158,6 +154,8 @@ Configuration
 *************
 
 .. include:: /includes/configuration/intro.txt
+
+|config|
 
 The following microphone overlays are provided:
 
@@ -243,7 +241,7 @@ Play one of the synthetic keyword recordings.
 Verify that the command is executed in the terminal logs.
 
 For ``TOGGLE_LIGHT``, bind Endpoint 1 to a light in your Matter ecosystem or observe the corresponding Generic Switch action in CHIP Tool.
-You can also press the |Second Button| to trigger the same toggle behavior without using voice commands.
+You can also press **the Button 1** to trigger the same toggle behavior without using voice commands.
 
 Testing with a commercial ecosystem
 ===================================

@@ -20,6 +20,7 @@
 .. _`Testing Matter in the NCS`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/getting_started/testing/index.html
 .. _`Matter controller`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/overview/network_topologies.html#ug-matter-configuring-controller
 .. _`Onboarding information formats`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/overview/commissioning.html#ug-matter-network-topologies-commissioning-onboarding-formats
+.. _`Matter architecture`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/overview/architecture.html
 
 .. ### NCS Zephyr documentation set
 
