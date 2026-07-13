@@ -13,13 +13,7 @@
 .. |matter_unique_discriminator_note| replace:: If you are working with multiple devices, set a unique discriminator for each one, or commission them one at a time.
    See `Configuring device identification`_ for more information.
 
-.. Buttons
-.. |First Button| replace:: `First Button <#buttons-and-leds-map>`__
-.. |Second Button| replace:: `Second Button <#buttons-and-leds-map>`__
-.. |Third Button| replace:: `Third Button <#buttons-and-leds-map>`__
-.. |Fourth Button| replace:: `Fourth Button <#buttons-and-leds-map>`__
-
-.. |matter_factory_reset| replace:: To restore the device settings and state to factory defaults, press the |First Button| for six seconds to initiate the factory reset of the device.
+.. |matter_factory_reset| replace:: To restore the device settings and state to factory defaults, press the **Button 0** for six seconds to initiate the factory reset of the device.
 .. |matter_ble_advertising_auto| replace:: Before starting the commissioning procedure, make sure that the device is discoverable over Bluetooth LE.
                                            The device becomes discoverable automatically upon the device startup, but only for a predefined period of time (one hour by default).
                                            If the Bluetooth LE advertising times out, enable it again.
