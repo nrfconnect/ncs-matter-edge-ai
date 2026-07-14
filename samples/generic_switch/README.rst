@@ -88,7 +88,7 @@ The application runs a two-stage inference pipeline:
 The wakeword phrase is ``OKAY NORDIC``.
 
 After wakeword detection, the application opens a short keyword detection window.
-The window duration is configured with :kconfig:option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S`.
+The window duration is configured with :option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S`.
 
 Supported voice commands
 ========================
@@ -162,7 +162,7 @@ The following microphone overlays are provided:
 * :file:`boards/dmic_adafruit.dtsi` for the `Adafruit PDM`_ module.
 * :file:`boards/dmic_low_power.dtsi` for the `lowPower PDM`_ module.
 
-You can adjust the keyword detection window duration with the :kconfig:option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S` Kconfig option.
+You can adjust the keyword detection window duration with the :option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S` option.
 
 Building and running
 ********************
