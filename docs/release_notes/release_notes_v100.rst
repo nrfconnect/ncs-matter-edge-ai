@@ -19,5 +19,5 @@ This is the first `experimental <Software maturity levels_>`_ release of the |ad
 
 Added:
 
-  * TBA
-
+   * The :ref:`matter_edge_ai_generic_switch_sample` sample.
+   * The :ref:`matter_edge_ai_ww_kw_guide` guide.
