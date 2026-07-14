@@ -55,3 +55,31 @@ Assuming you have an existing |NCS| workspace in the :file:`ncs` folder, run the
    .. code-block:: console
 
       west update
+
+#. Optionally, run these commands in case you need to go back to work on the nRF Connect SDK without the add-on:
+
+   a. Configure the manifest path back to the nRF Connect SDK directory
+
+      .. code-block:: console
+
+         west config manifest.path nrf
+
+   #. Update nRF Connect SDK modules
+
+      .. code-block:: console
+
+         west update
+   
+   #. Check the current manifest path with the following command:
+
+      .. code-block:: console
+
+         west config manifest.path
+
+      The output should be:
+
+      .. code-block:: console
+
+         nrf
+
+      This means that the current workspace is using the nRF Connect SDK.

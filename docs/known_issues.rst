@@ -19,7 +19,9 @@ Items can have one or both of the following entries:
   Some known issues have a workaround.
   Sometimes, they are discovered later and added over time.
 
-List of known issues for (TBC) release
-**************************************
+List of known issues for v1.0.0 release
+***************************************
+
+The following release is `experimental <Software maturity levels_>`_.
 
 TBA
