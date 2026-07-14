@@ -32,54 +32,69 @@ Getting the add-on code
 
 Assuming you have an existing |NCS| workspace in the :file:`ncs` folder, run the following commands:
 
-1. Navigate to the workspace folder:
+To work with the |addon|, you need to install the |NCS|, including all its prerequisites and the |NCS| toolchain.
+Follow the `Installing the nRF Connect SDK`_ instructions, with the following exception:
 
-   .. code-block:: console
+.. tabs::
 
-      cd ncs
+   .. group-tab:: |nRFVSC|
 
-#. Clone the add-on repository:
+      1. In the `Get the nRF Connect SDK code <Installing the nRF Connect SDK_>`_ section, click :guilabel:`Create a new application`. 
+      #. Select :guilabel:`Browse nRF Connect SDK Add-on Index`, then choose :guilabel:`NCS Matter Edge AI`. 
+      #. Select v\ |addon_version| of the |addon|. 
+         This step also installs the |NCS| v\ |ncs_version|.
 
-   .. code-block:: console
+   .. group-tab:: command line
 
-      git clone https://github.com/nrfconnect/ncs-matter-edge-ai
 
-#. Set the manifest path to the add-on directory:
+      1. Navigate to the workspace folder:
 
-   .. code-block:: console
+         .. code-block:: console
 
-      west config manifest.path ncs-matter-edge-ai
+            cd ncs
 
-#. Update the |NCS| modules:
+      #. Clone the add-on repository:
 
-   .. code-block:: console
+         .. code-block:: console
 
-      west update
+            git clone https://github.com/nrfconnect/ncs-matter-edge-ai
 
-#. Optionally, run these commands in case you need to go back to work on the nRF Connect SDK without the add-on:
+      #. Set the manifest path to the add-on directory:
 
-   a. Configure the manifest path back to the nRF Connect SDK directory
+         .. code-block:: console
 
-      .. code-block:: console
+            west config manifest.path ncs-matter-edge-ai
 
-         west config manifest.path nrf
+      #. Update the |NCS| modules:
 
-   #. Update nRF Connect SDK modules
+         .. code-block:: console
 
-      .. code-block:: console
+            west update
 
-         west update
-   
-   #. Check the current manifest path with the following command:
+      #. Optionally, run these commands in case you need to go back to work on the nRF Connect SDK without the add-on:
 
-      .. code-block:: console
+         a. Configure the manifest path back to the nRF Connect SDK directory
 
-         west config manifest.path
+            .. code-block:: console
 
-      The output should be:
+               west config manifest.path nrf
 
-      .. code-block:: console
+         #. Update nRF Connect SDK modules
 
-         nrf
+            .. code-block:: console
 
-      This means that the current workspace is using the nRF Connect SDK.
+               west update
+         
+         #. Check the current manifest path with the following command:
+
+            .. code-block:: console
+
+               west config manifest.path
+
+            The output should be:
+
+            .. code-block:: console
+
+               nrf
+
+            This means that the current workspace is using the nRF Connect SDK.
