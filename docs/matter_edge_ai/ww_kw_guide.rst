@@ -26,7 +26,7 @@ Solution architecture
 *********************
 
 The WW/KW pipeline runs as a dedicated Zephyr thread (:cpp:class:`EdgeAITask`) in :file:`samples/common/nrf_edgeai_ww_kw_task.cpp`.
-The thread captures PCM audio from the DMIC, runs wakeword inference until a wakeword is detected, opens a keyword detection window (duration set by the :kconfig:option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S` Kconfig option), and runs keyword spotting inference until a command is confirmed.
+The thread captures PCM audio from the DMIC, runs wakeword inference until a wakeword is detected, opens a keyword detection window (duration set by the :option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S` option), and runs keyword spotting inference until a command is confirmed.
 
 Generic code in :file:`samples/common` handles DMIC capture, model inference loops, and the wakeword-to-keyword state machine.
 Your application provides:
@@ -225,10 +225,10 @@ Enabling Kconfig options
 
 Enable the following Kconfig options in your application project:
 
-* :kconfig:option:`CONFIG_FPU` — Enable Floating Point Unit.
-* :kconfig:option:`CONFIG_NEWLIB_LIBC` — Enable Newlib C library.
-* :kconfig:option:`CONFIG_MATTER_EDGEAI` — Enable Matter Edge AI.
-* :kconfig:option:`CONFIG_MATTER_EDGEAI_DMIC` — Enable Matter Edge AI DMIC.
+* :option:`CONFIG_FPU` — Enable Floating Point Unit.
+* :option:`CONFIG_NEWLIB_LIBC` — Enable Newlib C library.
+* :option:`CONFIG_MATTER_EDGEAI` — Enable Matter Edge AI.
+* :option:`CONFIG_MATTER_EDGEAI_DMIC` — Enable Matter Edge AI DMIC.
 
 For the full list of add-on and sample options, see :ref:`matter_edge_ai_samples_config`.
 
@@ -244,24 +244,24 @@ Optional modules
 
 The following optional modules in :file:`samples/common` extend the WW/KW pipeline:
 
-* :kconfig:option:`CONFIG_MATTER_EDGEAI_DIMMING` — Enable dimming support once a keyword is detected.
+* :option:`CONFIG_MATTER_EDGEAI_DIMMING` — Enable dimming support once a keyword is detected.
 
 Commonly tuned options
 ======================
 
 The following options are commonly tuned in the application project:
 
-* :kconfig:option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S` — Timeout for keyword detection in seconds after recognizing the wakeword.
-* :kconfig:option:`CONFIG_MATTER_EDGEAI_TASK_THREAD_STACK_SIZE` — Stack size for the Edge AI wakeword/keyword task thread.
-* :kconfig:option:`CONFIG_MATTER_EDGEAI_TASK_THREAD_PRIORITY` — Priority for the Edge AI wakeword/keyword task thread.
-* :kconfig:option:`CONFIG_MATTER_EDGEAI_WW_KW_LOG_LEVEL` — Log level for the Edge AI wakeword/keyword task and model processing modules.
+* :option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S` — Timeout for keyword detection in seconds after recognizing the wakeword.
+* :option:`CONFIG_MATTER_EDGEAI_TASK_THREAD_STACK_SIZE` — Stack size for the Edge AI wakeword/keyword task thread.
+* :option:`CONFIG_MATTER_EDGEAI_TASK_THREAD_PRIORITY` — Priority for the Edge AI wakeword/keyword task thread.
+* :option:`CONFIG_MATTER_EDGEAI_WW_KW_LOG_LEVEL` — Log level for the Edge AI wakeword/keyword task and model processing modules.
 
 Wakeword tuning options
 =======================
 
-* :kconfig:option:`CONFIG_MATTER_EDGEAI_WAKEWORD_PROBABILITY_THRESHOLD` — Per-frame probability threshold (0–1000; default 990 corresponds to 0.99).
-* :kconfig:option:`CONFIG_MATTER_EDGEAI_WAKEWORD_HISTORY_SIZE` — Sliding window length for detections.
-* :kconfig:option:`CONFIG_MATTER_EDGEAI_WAKEWORD_COUNT_THRESHOLD` — Number of above-threshold frames required to confirm a wakeword.
+* :option:`CONFIG_MATTER_EDGEAI_WAKEWORD_PROBABILITY_THRESHOLD` — Per-frame probability threshold (0–1000; default 990 corresponds to 0.99).
+* :option:`CONFIG_MATTER_EDGEAI_WAKEWORD_HISTORY_SIZE` — Sliding window length for detections.
+* :option:`CONFIG_MATTER_EDGEAI_WAKEWORD_COUNT_THRESHOLD` — Number of above-threshold frames required to confirm a wakeword.
 
 Applications and samples
 ************************
@@ -279,9 +279,9 @@ The WW/KW pipeline is implemented by shared sources under :file:`samples/common`
 * :file:`wakeword.c` / :file:`wakeword.h` — wakeword inference loop and detection state machine.
 * :file:`keyword.c` / :file:`keyword.h` — keyword spotting inference and class confirmation.
 * :file:`dmic.c` / :file:`dmic.h` — DMIC capture for the Edge AI audio pipeline.
-* :file:`dimming_effect.cpp` / :file:`dimming_effect.h` — optional LED dimming feedback (requires :kconfig:option:`CONFIG_MATTER_EDGEAI_DIMMING`).
+* :file:`dimming_effect.cpp` / :file:`dimming_effect.h` — optional LED dimming feedback (requires :option:`CONFIG_MATTER_EDGEAI_DIMMING`).
 
-Include :file:`matter_edge_ai_common.cmake` from your sample :file:`CMakeLists.txt` to add these sources to the build when :kconfig:option:`CONFIG_MATTER_EDGEAI` is enabled.
+Include :file:`matter_edge_ai_common.cmake` from your sample :file:`CMakeLists.txt` to add these sources to the build when :option:`CONFIG_MATTER_EDGEAI` is enabled.
 
 Dependencies
 ************
