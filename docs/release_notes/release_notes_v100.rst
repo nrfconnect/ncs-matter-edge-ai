@@ -1,7 +1,7 @@
 .. _release_notes_vTBA:
 
-Release notes for |addon| vTBA
-##############################
+Release notes for |addon| v1.0.0
+################################
 
 .. contents::
    :local:
@@ -15,4 +15,9 @@ For the list of potential issues, see the :ref:`known_issues` page.
 Changelog
 *********
 
-TBA
+This is the first `experimental <Software maturity levels_>`_ release of the |addon|.
+
+Added:
+
+  * TBA
+
