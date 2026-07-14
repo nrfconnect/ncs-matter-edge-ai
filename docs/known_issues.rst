@@ -23,5 +23,3 @@ List of known issues for v1.0.0 release
 ***************************************
 
 The following release is `experimental <Software maturity levels_>`_.
-
-TBA
