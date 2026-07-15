@@ -1,7 +1,7 @@
 .. ### Versions
 
-.. |ncs_version| replace:: 3.3.0
-.. |edge-ai_version| replace:: 2.1.0
+.. |ncs_version| replace:: 3.4.0
+.. |edge-ai_version| replace:: 2.2.0
 
 .. |NCS| replace:: nRF Connect SDK
 .. |addon| replace:: Matter Edge AI add-on

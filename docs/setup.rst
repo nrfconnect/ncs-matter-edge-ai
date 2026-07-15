@@ -16,6 +16,11 @@ To use the |addon|, you need a development kit that supports the Matter protocol
 
 .. table-from-sample-yaml::
 
+.. note::
+
+   The add-on requires the ``nrf54lm20dk/nrf54lm20b/cpuapp`` board target, which uses the nRF54LM20B SoC with the Axon NPU.
+   The ``nrf54lm20dk/nrf54lm20a/cpuapp`` target emulates the NPU-less nRF54LM20A variant and is not supported because on-device Edge AI inference requires the Axon NPU.
+
 Software requirements
 *********************
 
