@@ -300,7 +300,7 @@ See :ref:`Switch endpoints <generic_switch_switch_endpoints>` for how the sample
 .. rst-class:: numbered-step
 
 Test voice and button control
--------------------------------
+-----------------------------
 
 1. Play a synthetic recording from :file:`sounds/` near the PDM microphone.
    Confirm the LEDs dim during the keyword window and the assigned automation runs in the ecosystem app.
