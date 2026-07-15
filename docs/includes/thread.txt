@@ -1,4 +1,6 @@
-If you want to commission the |matter_name| device and control it remotely through a Thread network, you need to set up the `Thread Border Router <Thread tools_#ug-thread-tools-tbr>`_ and control it with the `chip-tool`_, or use a commercial ecosystem controller.
+If you want to commission the |matter_name| device and control it remotely through a Thread network, you need a `Thread Border Router <Thread tools_#ug-thread-tools-tbr>`_ (TBR) on that network.
+To control the device, you can use `chip-tool`_ or a commercial Matter ecosystem controller.
+A commercial home hub that supports Matter and includes TBR capability (for example, Apple HomePod, Google Nest Hub, or Amazon Echo with Thread) can replace both a standalone OTBR and CHIP Tool.
 You can also control it using a Matter controller `configured on PC or smartphone <Testing Matter in the NCS_>`_.
 This requires additional hardware depending on the setup you choose.
 

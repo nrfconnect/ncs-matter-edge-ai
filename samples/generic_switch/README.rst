@@ -18,7 +18,7 @@ Matter Edge AI generic switch
    :depth: 2
 
 This sample demonstrates a voice-controlled Matter generic switch built with `Edge AI add-on`_ Axon-based inference.
-It captures audio from a PDM microphone, detects a wakeword, recognizes keywords in a spoken command, and sends the corresponding Matter Generic Switch action to a Matter controller.
+It captures audio from a PDM microphone, detects a wakeword, recognizes keywords in a spoken command, and sends the corresponding Matter Switch action to a Matter controller.
 
 .. note::
    This sample in the |addon| for the |NCS| is provided as an experimental feature.
@@ -44,8 +44,8 @@ The application requires a PDM digital microphone connected according to the sel
 
 For development, two microphone options are supported, each with a dedicated :file:`.dtsi` overlay in the project:
 
-* `Adafruit PDM`_ — Adafruit PDM MEMS microphone module
-* `lowPower PDM`_ — Low-power PDM MEMS microphone module that can be attached to the nRF54LM20 DK
+* `Adafruit PDM`_ — Adafruit PDM MEMS microphone module that you connect to the DK with jumper wires (see pin mapping below)
+* `lowPower PDM`_ — Low-power PDM MEMS microphone shield that can be attached directly to the nRF54LM20 DK
 
 Pin mapping
 -----------
@@ -104,8 +104,13 @@ The following keywords are recognized after the wakeword:
 Switch endpoints
 ================
 
-Commercial Matter ecosystems typically expose the Generic Switch cluster in momentary mode with short press, long press, and multiple press actions.
+Commercial Matter ecosystems typically expose the Switch cluster in momentary mode with short press, long press, and multiple press actions.
 Each action can be assigned to a single steering function in the ecosystem app.
+
+.. note::
+   This sample implements a *generic switch* (Switch cluster in momentary mode) rather than a Matter light switch with direct binding to a light bulb.
+   Most commercial Matter ecosystems do not support binding a light switch endpoint directly to a light bulb device.
+   The generic switch model lets you assign switch press actions to ecosystem automations instead.
 
 To support toggling a light from one voice command, the sample maps short press to *on* and long press to *off* on Endpoint 1.
 The ``TOGGLE_LIGHT`` keyword alternates between those two actions.
@@ -240,13 +245,26 @@ Play the synthetic keyword command
 Play one of the synthetic keyword recordings.
 Verify that the command is executed in the terminal logs.
 
-For ``TOGGLE_LIGHT``, bind Endpoint 1 to a light in your Matter ecosystem or observe the corresponding Generic Switch action in CHIP Tool.
+For ``TOGGLE_LIGHT``, bind Endpoint 1 to a light in your Matter ecosystem or observe the corresponding Switch action in CHIP Tool.
 You can also press **the Button 1** to trigger the same toggle behavior without using voice commands.
 
 Testing with a commercial ecosystem
 ===================================
 
 .. include:: /includes/testing/ecosystem.txt
+
+After commissioning, configure the switch endpoints in your ecosystem application.
+The exact steps depend on the ecosystem UI, but the general workflow is:
+
+1. Open the device settings for the commissioned switch in the ecosystem app.
+2. Assign steering functions to the switch actions exposed by each endpoint—for example, short press, long press, and multiple press.
+3. For Endpoint 1, bind short press to turn a light on and long press to turn it off (to support the ``TOGGLE_LIGHT`` keyword).
+4. For Endpoints 2–5, assign short press actions to scenes or other automations as needed.
+
+After configuration, test the setup:
+
+1. Play a synthetic wakeword and keyword recording near the microphone, or press **Button 1** for the toggle action.
+2. Verify that the bound light or scene responds as configured in the ecosystem app.
 
 Dependencies
 ************

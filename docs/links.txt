@@ -21,6 +21,9 @@
 .. _`Matter controller`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/overview/network_topologies.html#ug-matter-configuring-controller
 .. _`Onboarding information formats`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/overview/commissioning.html#ug-matter-network-topologies-commissioning-onboarding-formats
 .. _`Matter architecture`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/overview/architecture.html
+.. _`Matter overview`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/overview/index.html
+.. _`Matter`: https://csa-iot.org/all-solutions/matter/
+.. _`Connectivity Standards Alliance`: https://csa-iot.org
 
 .. ### NCS Zephyr documentation set
 
@@ -31,7 +34,8 @@
 .. _`Software maturity levels`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/software_maturity.html
 .. _`Matter Edge AI add-on`: https://github.com/nrfconnect/ncs-matter-edge-ai
 .. _`Nordic Edge AI Lab`: https://ai.lab.nordicsemi.com/
-.. _`Edge AI add-on`: https://github.com/nrfconnect/sdk-edge-ai
+.. _`Edge AI add-on`: https://nrfconnectdocs.nordicsemi.com/addons/addon-edge-ai/latest/index.html
+.. _`Edge AI add-on repository`: https://github.com/nrfconnect/sdk-edge-ai
 .. _`adafruit PDM`: https://learn.adafruit.com/adafruit-pdm-microphone-breakout
 .. _`lowPower PDM`: https://github.com/hlord2000/Microphone-Fin
 
