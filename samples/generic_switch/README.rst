@@ -101,6 +101,8 @@ The following keywords are recognized after the wakeword:
 * ``SCENE_THREE`` — Sends a short press action on Endpoint 4.
 * ``SCENE_FOUR`` — Sends a short press action on Endpoint 5.
 
+.. _generic_switch_switch_endpoints:
+
 Switch endpoints
 ================
 
@@ -246,25 +248,63 @@ Play one of the synthetic keyword recordings.
 Verify that the command is executed in the terminal logs.
 
 For ``TOGGLE_LIGHT``, bind Endpoint 1 to a light in your Matter ecosystem or observe the corresponding Switch action in CHIP Tool.
-You can also press **the Button 1** to trigger the same toggle behavior without using voice commands.
+You can also press **Button 1** to trigger the same toggle behavior without using voice commands.
 
 Testing with a commercial ecosystem
 ===================================
 
+Use this path when testing with a commercial Matter controller (for example, Apple Home, Google Home, or Amazon Alexa) instead of CHIP Tool.
+
+.. rst-class:: numbered-step
+
+Commission the device
+---------------------
+
 .. include:: /includes/testing/ecosystem.txt
 
-After commissioning, configure the switch endpoints in your ecosystem application.
-The exact steps depend on the ecosystem UI, but the general workflow is:
+.. rst-class:: numbered-step
 
-1. Open the device settings for the commissioned switch in the ecosystem app.
-2. Assign steering functions to the switch actions exposed by each endpoint—for example, short press, long press, and multiple press.
-3. For Endpoint 1, bind short press to turn a light on and long press to turn it off (to support the ``TOGGLE_LIGHT`` keyword).
-4. For Endpoints 2–5, assign short press actions to scenes or other automations as needed.
+Configure switch actions in the ecosystem app
+---------------------------------------------
 
-After configuration, test the setup:
+In your ecosystem app, assign automations to each endpoint's press actions.
+The UI varies by ecosystem, but the mapping below matches the voice keywords from :ref:`Synthetic test audio <generic_switch_synthetic_test_audio>`:
 
-1. Play a synthetic wakeword and keyword recording near the microphone, or press **Button 1** for the toggle action.
-2. Verify that the bound light or scene responds as configured in the ecosystem app.
+.. list-table::
+   :header-rows: 1
+
+   * - Endpoint / action
+     - Suggested automation
+     - Voice keyword
+   * - Endpoint 1 — short press
+     - Turn a light on
+     - ``TOGGLE_LIGHT`` (on phase)
+   * - Endpoint 1 — long press
+     - Turn a light off
+     - ``TOGGLE_LIGHT`` (off phase)
+   * - Endpoint 2 — short press
+     - Scene 1
+     - ``SCENE_ONE``
+   * - Endpoint 3 — short press
+     - Scene 2
+     - ``SCENE_TWO``
+   * - Endpoint 4 — short press
+     - Scene 3
+     - ``SCENE_THREE``
+   * - Endpoint 5 — short press
+     - Scene 4
+     - ``SCENE_FOUR``
+
+See :ref:`Switch endpoints <generic_switch_switch_endpoints>` for how the sample maps voice commands to press types.
+
+.. rst-class:: numbered-step
+
+Test voice and button control
+-------------------------------
+
+1. Play a synthetic recording from :file:`sounds/` near the PDM microphone.
+   Confirm the LEDs dim during the keyword window and the assigned automation runs in the ecosystem app.
+#. For ``TOGGLE_LIGHT``, you can also press **Button 1** to trigger the same toggle behavior without voice.
 
 Dependencies
 ************
