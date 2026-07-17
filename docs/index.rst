@@ -4,7 +4,7 @@
 #####################
 
 The |addon| for the |NCS| combines `Matter`_ smart-home protocol support with Edge AI capabilities.
-It enables development of Matter accessories that use on-device inference—for example, voice-controlled switches that detect a wakeword and recognize spoken commands.
+It enables development of Matter accessories that use on-device inference.
 
 The add-on builds on the `Edge AI add-on`_ (version |edge-ai_version|) and connects it with Matter applications in the |NCS|.
 In combination with the |NCS|, the |addon| allows for development of Matter Edge AI applications.
