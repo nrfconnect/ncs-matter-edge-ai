@@ -4,7 +4,7 @@ The Matter and Edge AI add-on for the nRF Connect SDK provides support for devel
 
 ## Getting started
 
-To get started with Matter and Edge AI add-on for nRF Connect SDK, follow documentation.
+To get started with Matter and Edge AI add-on for nRF Connect SDK, follow [documentation](https://nrfconnectdocs.nordicsemi.com/addons/ncs-matter-edge-ai/latest/index.html).
 
 ##  License
 
