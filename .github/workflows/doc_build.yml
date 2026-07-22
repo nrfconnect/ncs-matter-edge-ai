@@ -93,11 +93,11 @@ jobs:
 
           # Create documentation upload files
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            ARCHIVE="addon-${{ env.DOC_ADDON_NAME }}-pr-${{ github.event.number }}.zip"
+            ARCHIVE="${{ env.DOC_ADDON_NAME }}-pr-${{ github.event.number }}.zip"
             echo "publish2 dev PR-${{ github.event.number }} ${ARCHIVE}" > "${MONITOR}"
             echo "${{ github.event.number }}" > pr.txt
           else
-            ARCHIVE="addon-${{ env.DOC_ADDON_NAME }}-${VERSION}.zip"
+            ARCHIVE="${{ env.DOC_ADDON_NAME }}-${VERSION}.zip"
             echo "publish2 main ${VERSION} ${ARCHIVE}" > "${MONITOR}"
           fi
 
