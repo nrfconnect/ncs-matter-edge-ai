@@ -47,8 +47,6 @@ exclude_patterns = ['_build_sphinx', '_build_doxygen', 'venv', 'Thumbs.db', '.DS
 
 html_theme = 'sphinx_ncs_theme'
 
-html_theme = 'sphinx_ncs_theme'
-
 html_theme_options = {
     'docsets': {},
 }

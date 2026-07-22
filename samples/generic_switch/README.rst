@@ -45,7 +45,16 @@ The application requires a PDM digital microphone connected according to the sel
 For development, two microphone options are supported, each with a dedicated :file:`.dtsi` overlay in the project:
 
 * `Adafruit PDM`_ — Adafruit PDM MEMS microphone module that you connect to the DK with jumper wires (see pin mapping below)
+
+.. image:: /images/nrf54lm20dk_adafruit_pdm.png
+           :width: 400px
+           :alt: nRF54LM20 DK with Adafruit PDM module
+
 * `lowPower PDM`_ — Low-power PDM MEMS microphone shield that can be attached directly to the nRF54LM20 DK
+
+.. image:: /images/nrf54lm20dk_low_power_pdm.png
+           :width: 400px
+           :alt: nRF54LM20 DK with lowPower PDM module
 
 Pin mapping
 -----------
