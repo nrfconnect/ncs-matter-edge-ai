@@ -147,6 +147,8 @@ void EdgeAITaskThread()
 		return;
 	}
 
+	LOG_INF("Waiting for wakeword...");
+
 	EdgeAITaskContext ctx;
 
 	while (true) {
@@ -199,7 +201,6 @@ bool EdgeAITask::Init()
 
 bool EdgeAITask::Start()
 {
-	LOG_INF("Waiting for wakeword...");
 	k_thread_start(sEdgeAITaskThreadId);
 	return true;
 }
