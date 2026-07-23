@@ -98,17 +98,18 @@ The wakeword phrase is ``OKAY NORDIC``.
 
 After wakeword detection, the application opens a short keyword detection window.
 The window duration is configured with :option:`CONFIG_MATTER_EDGEAI_KEYWORD_DETECTION_TIMEOUT_S`.
+The wakeword and keyword detection is available only when the Matter server is ready, which means the device has been commissioned to the Matter fabric.
 
 Supported voice commands
 ========================
 
 The following keywords are recognized after the wakeword:
 
-* ``TOGGLE_LIGHT`` — Toggles a bound light by alternating short and long press actions on Endpoint 1.
-* ``SCENE_ONE`` — Sends a short press action on Endpoint 2.
-* ``SCENE_TWO`` — Sends a short press action on Endpoint 3.
-* ``SCENE_THREE`` — Sends a short press action on Endpoint 4.
-* ``SCENE_FOUR`` — Sends a short press action on Endpoint 5.
+* ``TOGGLE_LIGHT`` — Toggles a bound light by alternating initial press and long press actions on Endpoint 1.
+* ``SCENE_ONE`` — Sends an initial press action on Endpoint 2.
+* ``SCENE_TWO`` — Sends an initial press action on Endpoint 3.
+* ``SCENE_THREE`` — Sends an initial press action on Endpoint 4.
+* ``SCENE_FOUR`` — Sends an initial press action on Endpoint 5.
 
 .. _generic_switch_switch_endpoints:
 
@@ -123,7 +124,7 @@ Each action can be assigned to a single steering function in the ecosystem app.
    Most commercial Matter ecosystems do not support binding a light switch endpoint directly to a light bulb device.
    The generic switch model lets you assign switch press actions to ecosystem automations instead.
 
-To support toggling a light from one voice command, the sample maps short press to *on* and long press to *off* on Endpoint 1.
+To support toggling a light from one voice command, the sample maps initial press to *on* and long press to *off* on Endpoint 1.
 The ``TOGGLE_LIGHT`` keyword alternates between those two actions.
 
 The sample exposes five momentary switch endpoints.
@@ -253,10 +254,29 @@ Verify that the LEDs on the DK start blinking smoothly and that the UART log sho
 Play the synthetic keyword command
 ----------------------------------
 
-Play one of the synthetic keyword recordings.
-Verify that the command is executed in the terminal logs.
+#. Play one of the synthetic keyword recordings.
+#. Verify in the terminal logs that the command is executed.
 
-For ``TOGGLE_LIGHT``, bind Endpoint 1 to a light in your Matter ecosystem or observe the corresponding Switch action in CHIP Tool.
+   For ``TOGGLE_LIGHT``, subscribe to the corresponding Switch actions using CHIP Tool.
+
+   * To monitor changing the state of the switch to *on*, run the following command:
+
+      .. parsed-literal::
+         :class: highlight
+
+         switch subscribe-event initial-press 0 120 |node_id| 1 --is-urgent true
+
+    * To monitor changing the state of the switch to *off*, run the following command:
+
+      .. parsed-literal::
+         :class: highlight
+
+         switch subscribe-event long-press 0 120 |node_id| 1 --keepSubscriptions 1 --is-urgent true
+
+    .. note::
+       The ``--keepSubscriptions 1`` option is required to keep the previous subscription active when you establish a new one.
+       Otherwise, the previous subscription will be cancelled.
+
 You can also press **Button 1** to trigger the same toggle behavior without using voice commands.
 
 Testing with a commercial ecosystem
