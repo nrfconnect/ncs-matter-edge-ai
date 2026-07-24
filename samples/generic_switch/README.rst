@@ -259,25 +259,25 @@ Play the synthetic keyword command
 
    For ``TOGGLE_LIGHT``, subscribe to the corresponding Switch actions using CHIP Tool.
 
-   * To monitor changing the state of the switch to *on*, run the following command:
+  * To monitor changing the state of the switch to *on*, run the following command:
 
-      .. parsed-literal::
-         :class: highlight
+    .. parsed-literal::
+       :class: highlight
 
-         switch subscribe-event initial-press 0 120 |node_id| 1 --is-urgent true
+       switch subscribe-event initial-press 0 120 |node_id| 1 --is-urgent true
 
-    * To monitor changing the state of the switch to *off*, run the following command:
+  * To monitor changing the state of the switch to *off*, run the following command:
 
-      .. parsed-literal::
-         :class: highlight
+    .. parsed-literal::
+       :class: highlight
 
-         switch subscribe-event long-press 0 120 |node_id| 1 --keepSubscriptions 1 --is-urgent true
+       switch subscribe-event long-press 0 120 |node_id| 1 --keepSubscriptions 1 --is-urgent true
 
-    .. note::
-       The ``--keepSubscriptions 1`` option is required to keep the previous subscription active when you establish a new one.
-       Otherwise, the previous subscription will be cancelled.
+   .. note::
+      The ``--keepSubscriptions 1`` option is required to keep the previous subscription active when you establish a new one.
+      Otherwise, the previous subscription will be cancelled.
 
-You can also press **Button 1** to trigger the same toggle behavior without using voice commands.
+   You can also press **Button 1** to trigger the same toggle behavior without using voice commands.
 
 Testing with a commercial ecosystem
 ===================================
