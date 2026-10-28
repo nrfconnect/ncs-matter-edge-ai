@@ -7,6 +7,7 @@
 .. |addon| replace:: Matter Edge AI add-on
 .. |nRFVSC| replace:: nRF Connect for VS Code extension
 .. |addon_version| replace:: 1.0.0
+.. |release| replace:: v1.0.0
 
 .. ### Matter sources
 

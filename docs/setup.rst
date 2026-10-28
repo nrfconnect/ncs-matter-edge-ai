@@ -46,11 +46,12 @@ Follow the `Installing the nRF Connect SDK`_ instructions, with the following ex
 
       1. In the `Get the nRF Connect SDK code <Installing the nRF Connect SDK_>`_ section, click :guilabel:`Create a new application`. 
       #. Select :guilabel:`Browse nRF Connect SDK Add-on Index`, then choose :guilabel:`NCS Matter Edge AI`. 
-      #. Select v\ |addon_version| of the |addon|. 
+      #. Select |release| of the |addon|. 
          This step also installs the |NCS| v\ |ncs_version|.
 
    .. group-tab:: command line
 
+      In the following commands, replace *version* with the tag of the |addon| release you want to use, or with ``main`` to use the latest development state.
 
       1. Navigate to the workspace folder:
 
@@ -60,9 +61,17 @@ Follow the `Installing the nRF Connect SDK`_ instructions, with the following ex
 
       #. Clone the add-on repository:
 
-         .. code-block:: console
+         .. parsed-literal::
+            :class: highlight
 
-            git clone https://github.com/nrfconnect/ncs-matter-edge-ai
+            git clone --branch *version* https\://github.com/nrfconnect/ncs-matter-edge-ai
+
+         For example:
+
+         .. parsed-literal::
+            :class: highlight
+
+            git clone --branch |release| https\://github.com/nrfconnect/ncs-matter-edge-ai
 
       #. Set the manifest path to the add-on directory:
 
